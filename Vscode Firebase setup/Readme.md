@@ -42,40 +42,55 @@ To log in to Firebase, follow these steps:
 2. Click on **"Go to Console"** in the top right corner.
 3. If prompted, sign in with your Google account credentials. If you don’t have a Google account, you will need to create one.
 4. Once logged in, you will be directed to your Firebase projects dashboard.
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f1.png)
 
 ### Step 3: Name Your Project
 Click on create new project to start with the new project.
 
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f2.png)
 ### Step 4: Name Your Project
 For consistency, let’s name our project **"TechnoVIT-PJT"** and click on **Continue**.
 
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f2.png)
 ### Step 5: Enable Analytics
 Check the box to allow Google Analytics for your project and click **Continue**.
 
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f3.png)
 ### Step 6: Configure Google Analytics
 Choose or create a Google Analytics account. If no account is available, create a new one using the pop-up. Then, select **Create Project**.
 
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f4.png)
 ### Step 7: Project Ready
 Your project will be ready and configured in a minute or two, and you can start coding! 🎉
 
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f5.png)
+
+### Step 8: Explore the new peoject console
+
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f6.png)
 # Setting Up Rules for Database and CRUD Operations 🔒
 
 ### Step 1: Access the Database Section
 1. Click on the three horizontal bars (☰) in the top left corner of the Firebase console to open the navigation menu.
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f7.png)
 
 ### Step 2: Navigate to Realtime Database
 2. Select **Build** from the menu, then click on **Realtime Database**. This will take you to the section where you can manage your database.
 
 ### Step 3: Create a Database
 3. Click on **Create Database** and choose **Next**. You will be prompted to select a starting mode for your Firebase Security Rules:
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f8.png)
    - **Test Mode**: This option allows anyone to read and write data to your database. It’s useful for initial testing but should not be used in production.
    - **Locked Mode**: This option denies all reads and writes from mobile and web clients. Only authenticated application servers can access your database.
 
-   For now, select **Test Mode** to get started, and then click on **Enable**.
+For now, select **Test Mode** to get started, and then click on **Enable**.
+
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f9.png)
 
 ### Step 4: Database Creation Confirmation
 4. Your database will be created and ready for use in just a minute or two! 🎉 You will see a dashboard with options for **Data**, **Rules**, **Backups**, and **Usage**.
 
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f10.png)
 ### Step 5: Set Database Rules
 5. Go to the **Rules** tab. Here, you will define the access permissions for your database. Paste the following code to allow read and write operations for all users:
 
@@ -87,6 +102,7 @@ Your project will be ready and configured in a minute or two, and you can start 
      }
    }
    ```
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f11.png)
 
    This configuration makes your database publicly accessible, which is suitable for testing but not recommended for production applications. 
 
@@ -95,7 +111,9 @@ Your project will be ready and configured in a minute or two, and you can start 
    - **Key:** `led_status`
    - **Value:** `0`
 
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f12.png)
    After entering the key and value, click on **Add**. This action will store the data in your database, and you’re almost done with setting up Firebase for your project! 💪
+![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f13.png)
 
 ### Step 7: Review and Discuss
 7. Now that your Firebase project is set up, let's discuss any questions or doubts you may have about the process or Firebase in general. 💬
