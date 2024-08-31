@@ -55,7 +55,7 @@ If you would like to contribute to the project, please follow these guidelines:
 
 ## Contact 📧
 
-If you have any questions or need further assistance, feel free to reach out to the event organizers:
+If you have any questions or need further assistance, feel free to reach out to the event resource person:
 
 - [Ayush Gupta](mailto:ayushgupta6194@gmail.com)
 

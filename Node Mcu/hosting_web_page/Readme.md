@@ -268,3 +268,5 @@ The JavaScript code also includes a function to periodically retrieve the distan
    - The distance reading is displayed with a superscript "cm" using HTML tags.
 
 In summary, the JavaScript code interacts with the server to control the LEDs and retrieve distance data. It sends GET requests to specific URLs with parameters and updates the HTML elements accordingly based on the server's responses. The periodic data retrieval function ensures that the distance display is updated every 6 seconds without user interaction.
+
+Feel free to customize the code further to suit your needs! If you have any questions or need assistance, don't hesitate to reach out. Happy coding! 🎉

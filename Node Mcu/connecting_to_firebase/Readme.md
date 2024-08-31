@@ -322,3 +322,5 @@ The program checks for serial input. If data is available, it reads the incoming
 
 ## Review and Discuss
 Now that your Firebase Authentication is set up and you have learned how to perform user sign-up, sign-in, and manage authentication state, let's discuss any questions or doubts you may have about the process or Firebase in general. 💬
+
+Feel free to customize the code further to suit your needs! If you have any questions or need assistance, don't hesitate to reach out. Happy coding! 🎉
