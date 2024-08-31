@@ -154,14 +154,9 @@ void loop() {
 - The `loop()` function continuously checks for incoming client requests and processes them using `server.handleClient()`. This allows the server to respond to user interactions in real-time.
 
 ---
+<br>
 
-This explanation provides a comprehensive overview of the NodeMCU code, focusing on the functionality of the key functions and their roles in establishing Wi-Fi connectivity, setting up the web server, and handling client requests.
-
-Citations:
-[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/14858924/c0bb6952-9907-4146-ad94-d6b3fcd2ca72/paste.txt
----
-
-## Explanation for the Web-page Scripting
+# Explanation for the Client-page Scripting
 
 here's a detailed explanation of the JavaScript section and how it interacts with the HTML:
 
