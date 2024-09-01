@@ -60,7 +60,7 @@ chart = new Chart(ctx, {
               duration: 1000,
               easing: 'linear',
               from: 0.5,
-              to: 0.0,
+              to: 0.4,
               loop: true
             }
           },
@@ -71,16 +71,18 @@ chart = new Chart(ctx, {
         }
     }
 });
-
+let s=0;
 // Set an interval to update the chart data every 9 seconds
 database.ref("distance").on("value", (snapshot) => {
-        dataPoints = snapshot.val(); // Get the current value of the "distance" reference
+    s++;    
+    dataPoints = snapshot.val(); // Get the current value of the "distance" reference
 
         // Clear the arrays to prepare for new data
         dataArray.length = 0; // Clear dataArray
+        if(s%5==0){
         xValues.length = 0; // Clear xValues
         yValues.length = 0; // Clear yValues
-
+}
         // Populate the dataArray with the values from the snapshot
         for (const key in dataPoints) {
             dataArray.push(dataPoints[key]); // Push each data point into dataArray
@@ -88,8 +90,10 @@ database.ref("distance").on("value", (snapshot) => {
 
         // Populate xValues and yValues arrays with corresponding data
         dataArray.forEach((dataPoint) => {
-            xValues.push(dataPoint.x); // Push x value to xValues
-            yValues.push(dataPoint.y); // Push y value to yValues
+            if(xValues.length==0 || xValues[xValues.length-1]<dataPoint.x){
+                xValues.push(dataPoint.x); // Push x value to xValues
+                yValues.push(dataPoint.y); // Push y value to yValues
+            }
         });
 
         // Update the chart with the new data
