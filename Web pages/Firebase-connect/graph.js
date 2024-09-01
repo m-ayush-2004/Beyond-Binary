@@ -55,6 +55,15 @@ chart = new Chart(ctx, {
         }]
     },
     options: {
+        animations: {
+            tension: {
+              duration: 1000,
+              easing: 'linear',
+              from: 0.5,
+              to: 0.0,
+              loop: true
+            }
+          },
         scales: {
             y: {
                 beginAtZero: true // Ensures the y-axis starts at zero
@@ -64,9 +73,7 @@ chart = new Chart(ctx, {
 });
 
 // Set an interval to update the chart data every 9 seconds
-setInterval(() => {
-    // Listen for changes in the "distance" reference in the Firebase database
-    database.ref("distance").on("value", (snapshot) => {
+database.ref("distance").on("value", (snapshot) => {
         dataPoints = snapshot.val(); // Get the current value of the "distance" reference
 
         // Clear the arrays to prepare for new data
@@ -90,4 +97,4 @@ setInterval(() => {
         chart.data.labels = xValues; // Update the labels with new x values
         chart.update(); // Refresh the chart to reflect the new data
     });
-}, 9000); // Repeat the above process every 9000 milliseconds (9 seconds)
+ // Repeat the above process every 9000 milliseconds (9 seconds)
