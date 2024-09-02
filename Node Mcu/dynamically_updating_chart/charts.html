@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Area Graph</title>
+    <style>
+        body {
+            background-color: rgb(60, 148, 132);
+            background-color: #000000;
+            /* Sets the background color of the body to black */
+        }
+    </style>
+    <!-- Include the CanvasJS library for creating charts -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- Include Firebase SDK for using Firebase services -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+    <!-- Include Chart.js library for creating charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="margin: 0px;">
+    <nav style="border-bottom:1px #303030 solid;">
+        <div style="display: flex; justify-content: space-between;color: rgb(118, 197, 125); background-color: rgb(0, 0, 0);">
+            <span style="padding: 20px;font-weight: 800;font-family: cursive;">TECHNOVIT</span>
+            <span style="padding: 20px;font-weight: 800;font-family: cursive;">https://iot.dashboard.html</span>
+        </div>
+    </nav>
+    <div id="container" style="display: flex;justify-content: center;">
+
+        <div style="width: 80vw;">
+            <!-- Canvas element where the chart will be rendered -->
+            <div id="container-1"
+                style="display: block; width: 100% !important;display: flex;justify-content: space-evenly;margin-bottom: 30px;margin-top: 30px;">
+                <div style="width: 25vw !important;height: 25vw !important;">
+                    <canvas id="myPie1" style="align-content: center;"></canvas>
+                </div>
+                <div style="width: 25vw !important;height: 25vw !important;">
+                    <canvas id="myPie2"></canvas>
+                </div>
+            </div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</body>
+<script type="module">
+    // Import necessary functions from Firebase SDK
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
+
+// Firebase configuration object containing the project's credentials
+const firebaseCredentials = {
+    apiKey: "AIzaSyAxrJCnE9B2MSC7Vp31bgYbGcxPe5I__Qo", // API key for Firebase project
+    authDomain: "technovit-24.firebaseapp.com", // Auth domain for Firebase authentication
+    databaseURL: "https://technovit-24-default-rtdb.firebaseio.com", // URL for the Firebase Realtime Database
+    projectId: "technovit-24", // Unique identifier for the Firebase project
+    storageBucket: "technovit-24.appspot.com", // Cloud Storage bucket for the project
+    messagingSenderId: "534890112185", // Sender ID for Firebase Cloud Messaging
+    appId: "1:534890112185:web:01dd39bda5a2f77293a768", // Unique identifier for the app
+    measurementId: "G-77NY3D7ZTM" // Measurement ID for Google Analytics
+};
+
+// Initialize Firebase with the provided configuration
+firebase.initializeApp(firebaseCredentials);
+const firebaseDatabase = firebase.database(); // Reference to the Firebase Realtime Database
+
+// Get the context of the canvas elements to draw the charts
+const pieChartContext1 = document.getElementById('myPie1').getContext('2d');
+const pieChartContext2 = document.getElementById('myPie2').getContext('2d');
+const lineChartContext = document.getElementById('myChart').getContext('2d');
+
+// Variables to hold chart instances
+let doughnutChart1; 
+let doughnutChart2; 
+let lineChart; 
+
+// Variables to store data points fetched from Firebase
+let led1DataPoints = []; 
+let led2DataPoints = []; 
+let distanceDataPoints = []; 
+
+// Arrays to hold y-axis values for the pie charts
+let led1PieValues = [1, 1]; 
+let led2PieValues = [1, 1]; 
+
+// Arrays to hold x-axis and y-axis values for the line chart
+let xAxisValues = []; 
+let yAxisValues = []; 
+
+// Create the first Doughnut chart instance using Chart.js
+doughnutChart1 = new Chart(pieChartContext1, {
+    type: 'doughnut',
+    data: {
+        labels: ["LED OFF", "LED1 ON"],
+        datasets: [{
+            label: 'LED1 Data Points',
+            data: led1PieValues,
+            backgroundColor: [
+                'rgb(255, 205, 86)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 99, 132)',
+            ],
+            borderColor: 'rgb(0, 0, 0)',
+            borderWidth: 3
+        }]
+    },
+    options: {
+        animations: {
+            explode: {
+                duration: 1000,
+                easing: 'explodeout',
+                from: 0.6,
+                to: 0.3,
+                loop: true
+            }
+        }
+    }
+});
+
+// Set an interval to update the first pie chart data every 9 seconds
+firebaseDatabase.ref("led2").on("value", (snapshot) => {
+    led2DataPoints = snapshot.val();
+    console.log(led2DataPoints);
+    if (led2DataPoints == 1) {
+        led2PieValues[1]++;
+    } else {
+        led2PieValues[0]++;
+    }
+    doughnutChart1.data.datasets[0].data = led2PieValues;
+    doughnutChart1.update();
+});
+
+// Create the second Doughnut chart instance using Chart.js
+doughnutChart2 = new Chart(pieChartContext2, {
+    type: 'doughnut',
+    data: {
+        labels: ["LED OFF", "LED2 ON"],
+        datasets: [{
+            label: 'LED2 Data Points',
+            data: led1PieValues,
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)',
+            ],
+            borderColor: 'rgb(0, 0, 0)',
+            borderWidth: 3
+        }]
+    },
+    options: {
+        animations: {
+            explode: {
+                duration: 1000,
+                easing: 'explodeout',
+                from: 0.5,
+                to: 0.4,
+                loop: true
+            }
+        }
+    }
+});
+
+// Set an interval to update the second pie chart data every 9 seconds
+firebaseDatabase.ref("led1").on("value", (snapshot) => {
+    led1DataPoints = snapshot.val();
+    console.log(led1DataPoints);
+    if (led1DataPoints == 1) {
+        led1PieValues[1]++;
+    } else {
+        led1PieValues[0]++;
+    }
+    doughnutChart2.data.datasets[0].data = led1PieValues;
+    doughnutChart2.update();
+});
+
+// Create the line chart instance using Chart.js
+lineChart = new Chart(lineChartContext, {
+    type: 'line',
+    data: {
+        labels: xAxisValues,
+        datasets: [{
+            fill: {
+                target: 'origin',
+                above: 'rgb(255, 0, 0,0.2)',
+                below: 'rgb(0, 0, 255,0.7)'
+            },
+            label: 'Distance Data Points',
+            data: yAxisValues,
+            backgroundColor: 'rgba(255, 99, 132, 0.8)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        animations: {
+            tension: {
+                duration: 1000,
+                easing: 'linear',
+                from: 0.6,
+                to: 0.4,
+                loop: true
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+let count = 0;
+// Set an interval to update the line chart data every 9 seconds
+firebaseDatabase.ref("distance").on("value", (snapshot) => {
+    distanceDataPoints = snapshot.val();
+    count++;    
+    // Clear the arrays to prepare for new data
+    if (count % 15 == 0) {
+        xAxisValues.length = 0;
+        yAxisValues.length = 0;
+        count=0;
+    }
+
+    // Populate the data arrays with the values from the snapshot
+    for (const key in distanceDataPoints) {
+        if (distanceDataPoints.hasOwnProperty(key)) {
+            const dataPoint = distanceDataPoints[key];
+            if (xAxisValues.length === 0 || xAxisValues[xAxisValues.length - 1] < dataPoint.x) {
+                xAxisValues.push(dataPoint.x);
+                yAxisValues.push(dataPoint.y);
+            }
+        }
+    }
+
+    // Update the line chart with the new data
+    lineChart.data.datasets[0].data = yAxisValues;
+    lineChart.data.labels = xAxisValues;
+    lineChart.update();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
