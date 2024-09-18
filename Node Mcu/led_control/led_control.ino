@@ -8,8 +8,8 @@
 #include <ESPAsyncTCP.h>
 #endif
 #include <ESPAsyncWebServer.h>
-const char* ssid = "YOUR SSID";
-const char* pass = "YOUR PASS";
+const char* ssid = "YOUR_SSID";
+const char* pass = "YOUR_PASS";
 int led = LED_BUILTIN;
 WiFiServer server(80);
 
@@ -57,12 +57,13 @@ void loop() {
   client.flush();
   if (request.indexOf("/LED=OFF") != -1)
   {
+    client.println("user requested " + request);
     digitalWrite(led, HIGH);
   }
   if (request.indexOf("/LED=ON") != -1)
   {
+    client.println("user requested " + request);
     digitalWrite(led, LOW);
   }
 
-  client.println("user requested " + request);
 }

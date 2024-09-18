@@ -12,8 +12,8 @@ Here’s a code explanation, with a shortened definition for later refference :
 #include <Arduino.h>
 #include <WiFiClient.h>
 
-const char *ssid = "ayush";
-const char *pass = "ayush2004";
+const char *ssid = "YOUR_SSID";
+const char *pass = "YOUR_PASS";
 ```
 - The code includes essential libraries for Wi-Fi connectivity and web server functionality. The SSID and password for the Wi-Fi network are defined as constants.
 

@@ -2,8 +2,8 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include <ArduinoJson.h>
-const char *ssid = "ayush";
-const char *pass = "ayush2004";
+const char *ssid = "YOUR_SSID";
+const char *pass = "YOUR_PASS";
 
 #define blue D5
 #define red D7

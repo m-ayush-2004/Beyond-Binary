@@ -2,8 +2,6 @@
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 #include <ArduinoJson.h>
-const char *ssid = "ayush";
-const char *pass = "ayush2004";
 #include <Firebase_ESP_Client.h>
 #define blue D5
 #define red D7
@@ -14,18 +12,20 @@ String uid;
 #include "addons/RTDBHelper.h"
 
 // Define Wi-Fi credentials
+const char *ssid = "YOUR_SSID";
+const char *pass = "YOUR_PASS";
 #define WIFI_SSID "YOUR_SSID"     // Wi-Fi SSID
 #define WIFI_PASSWORD "YOUR_PASS" // Wi-Fi password
 
 // Define Firebase project API Key
-#define API_KEY "AIzaSyAxrJCnE9B2MSC7Vp31bgYbGcxPe5I__Qo"
+#define API_KEY "YOUR_API_KEY"
 
 // Define user email and password for Firebase authentication
 #define USER_EMAIL "test@gmail.com"
 #define USER_PASSWORD "test123"
 
 // Define the Firebase Realtime Database URL
-#define DATABASE_URL "https://technovit-24-default-rtdb.firebaseio.com/"
+#define DATABASE_URL "YOUR_DATABASE_LINK"
 
 // Create Firebase Data object for database operations
 FirebaseData fbdo;

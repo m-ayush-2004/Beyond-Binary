@@ -20,14 +20,14 @@ String uid;  // Variable to store the user ID
 #define WIFI_PASSWORD "YOUR_PASS"  // Wi-Fi password
 
 // Define Firebase project API Key
-#define API_KEY "AIzaSyAxrJCnE9B2MSC7Vp31bgYbGcxPe5I__Qo"
+#define API_KEY "YOUR_API_KEY"
 
 // Define user email and password for Firebase authentication
 #define USER_EMAIL "test@gmail.com"
 #define USER_PASSWORD "test123"
 
 // Define the Firebase Realtime Database URL
-#define DATABASE_URL "https://technovit-24-default-rtdb.firebaseio.com/"
+#define DATABASE_URL "YOUR_DATABASE_LINK"
 
 // Create Firebase Data object for database operations
 FirebaseData fbdo;
