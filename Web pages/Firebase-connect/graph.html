@@ -6,7 +6,34 @@
     <style>
         body {
             background-color: #000000;
+            margin: 0px;
             /* Sets the background color of the body to black */
+        }
+        #myChart-1{
+            height: 250px !important;
+            width: 250px !important;
+        }
+        #myChart-2{
+            height: 250px !important;
+            width: 250px !important;
+        }
+        #nav{
+            background-color: rgb(6, 65, 67);
+            padding: 10px;
+        }
+        h1{
+            color: #dfdddd;
+            font-family: cursive;
+            font-size: 23px;
+            margin: 0px;
+            margin: 0px;
+        }
+        h2{
+            font-family: cursive;
+            font-size: large;
+            color: #dfdddd;
+            margin: 0px;
+            margin: 0px;
         }
     </style>
     <!-- Include the CanvasJS library for creating charts -->
@@ -19,6 +46,15 @@
 
 <body>
     <!-- Canvas element where the chart will be rendered -->
+    <div id="nav" style="display: flex; justify-content: space-between;">
+        <h1>TECHNOVIT</h1>
+        <h2>Login: https://technovit24.com</h2>
+    </div>
+    <div class="container" style="display: flex; justify-content: space-around;">
+        <canvas id="myChart-1" style="height: 250px;width: 250px;"></canvas>
+        <canvas id="myChart-2" style="height: 250px;width: 250px;"></canvas>
+    </div>
+    <br><br><br>
     <canvas id="myChart"></canvas>
 
 </body>

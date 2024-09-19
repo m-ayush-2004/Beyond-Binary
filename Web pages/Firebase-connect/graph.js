@@ -80,10 +80,11 @@ database.ref("distance").on("value", (snapshot) => {
 
         // Clear the arrays to prepare for new data
         dataArray.length = 0; // Clear dataArray
-        if(s%5==0){
-        xValues.length = 0; // Clear xValues
-        yValues.length = 0; // Clear yValues
-}
+        if(s%15==0){
+            xValues.length = 0; // Clear xValues
+            yValues.length = 0; // Clear yValues
+            s=0;
+        }
         // Populate the dataArray with the values from the snapshot
         for (const key in dataPoints) {
             dataArray.push(dataPoints[key]); // Push each data point into dataArray
@@ -101,5 +102,108 @@ database.ref("distance").on("value", (snapshot) => {
         chart.data.datasets[0].data = yValues; // Update the dataset with new y values
         chart.data.labels = xValues; // Update the labels with new x values
         chart.update(); // Refresh the chart to reflect the new data
-    });
- // Repeat the above process every change in firebase data values
+});
+// Repeat the above process every change in firebase data values
+
+// led 1 chart
+const pie1 = document.getElementById('myChart-1').getContext('2d');
+let led1 = [1,0]; // Array to store data points fetched from Firebase
+let counts = {};
+let chart2 = new Chart(pie1, {
+    type: 'doughnut', // Specifies the type of chart (line chart)
+    data :{
+        labels: [
+          'ON',
+          'OFF'
+        ],
+        datasets: [{
+          data: [1, 2],
+          backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
+          ]
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'LIGHT ONE STATUS'
+            }
+        }
+    }
+});
+
+// Set an interval to update the chart data every 9 seconds
+database.ref("led1").on("value", (snapshot) => {
+
+    dataPoints = snapshot.val(); // Get the current value of the "distance" reference
+
+        // Clear the arrays to prepare for new data
+        // Update the chart with the new data
+        if(dataPoints == 1){
+            console.log(dataPoints)
+            chart2.data.datasets[0].data[1]=2; // Update the dataset with new y values
+            chart2.data.datasets[0].data[0]=1; // Update the dataset with new y values
+        }
+        else if(dataPoints == 0){
+            chart2.data.datasets[0].data[0]=2; // Update the dataset with new y values
+            chart2.data.datasets[0].data[1]=1; // Update the dataset with new y values
+        }
+        // chart.data.labels = xValues; // Update the labels with new x values
+        chart2.update(); // Refresh the chart to reflect the new data
+});
+// Repeat the above process every change in firebase data values
+
+
+
+// led 1 chart
+const pie2 = document.getElementById('myChart-2').getContext('2d');
+let led2 = [1,0]; // Array to store data points fetched from Firebase
+let counts2 = {};
+let chart3 = new Chart(pie2, {
+    type: 'doughnut', // Specifies the type of chart (line chart)
+    data :{
+        labels: [
+          'ON',
+          'OFF'
+        ],
+        datasets: [{
+          data: [1, 2],
+          backgroundColor: [
+            'rgb(197, 118, 231)',
+            'rgb(205, 204, 136)',
+          ]
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'LIGHT TWO STATUS'
+            }
+        }
+    }
+});
+
+// Set an interval to update the chart data every 9 seconds
+database.ref("led2").on("value", (snapshot) => {
+
+    dataPoints = snapshot.val(); // Get the current value of the "distance" reference
+
+        // Clear the arrays to prepare for new data
+        // Update the chart with the new data
+        if(dataPoints == 1){
+            console.log(dataPoints)
+            chart3.data.datasets[0].data[1]=2; // Update the dataset with new y values
+            chart3.data.datasets[0].data[0]=1; // Update the dataset with new y values
+        }
+        else if(dataPoints == 0){
+            chart3.data.datasets[0].data[0]=2; // Update the dataset with new y values
+            chart3.data.datasets[0].data[1]=1; // Update the dataset with new y values
+        }
+        // chart.data.labels = xValues; // Update the labels with new x values
+        chart3.update(); // Refresh the chart to reflect the new data
+});
+// Repeat the above process every change in firebase data values
