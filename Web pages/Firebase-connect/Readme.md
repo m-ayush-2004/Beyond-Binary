@@ -31,11 +31,6 @@ To create a web application and set it up in Firebase, follow these detailed ste
    Example script to be copied (note that your values will differ):
 
    ```html
-   <script type="module">
-     // Import the functions you need from the SDKs you need
-     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
-     import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
-
      // Your web app's Firebase configuration
      const firebaseConfig = {
        apiKey: "AIzaSyAxrJCnE9B2MSC7Vp31bgYbGcxPe5I__Qo",
@@ -47,14 +42,9 @@ To create a web application and set it up in Firebase, follow these detailed ste
        appId: "1:534890112185:web:01dd39bda5a2f77293a768",
        measurementId: "G-77NY3D7ZTM"
      };
-
-     // Initialize Firebase
-     const app = initializeApp(firebaseConfig);
-     const analytics = getAnalytics(app);
-   </script>
    ```
 
-3. **Paste the Script in Your HTML**: Add the copied script tag to your HTML file, ideally within the `<head>` or at the end of the `<body>` section. This script initializes Firebase with your specific configuration.
+3. **Paste the Script in Your Java Script File**: Add the copied script tag to your HTML file, ideally within the `<head>` or at the end of the `<body>` section. This script initializes Firebase with your specific configuration.
 <br><br>![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/w5.png)
 
 ## Step 4: Continue to Firebase Console
