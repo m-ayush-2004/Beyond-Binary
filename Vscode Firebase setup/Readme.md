@@ -107,7 +107,7 @@ For now, select **Test Mode** to get started, and then click on **Enable**.
    This configuration makes your database publicly accessible, which is suitable for testing but not recommended for production applications. 
 
 ### Step 6: Add Data to Your Database
-6. To add data, hover over the URL of your database, which will look something like this: `https://technovit-pjt-default-rtdb.firebaseio.com/`. You should see an **Add** option. Click on it to create a new key-value pair:
+6. To add data, hover over the URL of your database, which will look something like this: `https://beyond-binary-2-default-rtdb.firebaseio.com/`. You should see an **Add** option. Click on it to create a new key-value pair:
    - **Key:** `led_status`
    - **Value:** `0`
 
