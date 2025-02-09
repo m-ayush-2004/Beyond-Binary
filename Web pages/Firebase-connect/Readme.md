@@ -44,7 +44,7 @@ To create a web application and set it up in Firebase, follow these detailed ste
      };
    ```
 
-3. **Paste the Script in Your Java Script File**: Add the copied script tag to your HTML file, ideally within the `<head>` or at the end of the `<body>` section. This script initializes Firebase with your specific configuration.
+3. **Paste the Script in Your Java Script File**: Add the copied script tag to your Java Script file. This script initializes Firebase with your specific configuration.
 <br><br>![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/w5.png)
 
 ## Step 4: Continue to Firebase Console
