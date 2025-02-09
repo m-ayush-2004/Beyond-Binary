@@ -49,7 +49,7 @@ Click on create new project to start with the new project.
 
 ![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f2.png)
 ### Step 4: Name Your Project
-For consistency, let’s name our project **"TechnoVIT-PJT"** and click on **Continue**.
+For consistency, let’s name our project **"Beyond-Binary"** and click on **Continue**.
 
 ![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/f2.png)
 ### Step 5: Enable Analytics
