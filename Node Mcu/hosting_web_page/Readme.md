@@ -76,8 +76,8 @@ const char index_html[] PROGMEM = R"rawliteral(
   <body>
     <div class="nav">
       <ul class="nav-list">
-        <li>TECHNO-VIT</li>
-        <li>Product ID: http://techno-vit.localhost/</li>
+        <li>Beyond-Binary</li>
+        <li>Product ID: http://Beyond-Binary.localhost/</li>
       </ul>
     </div>
     <div class="container">
