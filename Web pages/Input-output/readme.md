@@ -42,8 +42,8 @@ Welcome to the **Automation Web Interface**! This HTML document serves as a user
 ```html
     <div class="nav">
       <ul class="nav-list">
-        <li class="nav-items1">TECHNO-VIT</li>
-        <li class="nav-items">product ID : http://techno-vit.localhost/</li>
+        <li class="nav-items1">Beyond-Binary</li>
+        <li class="nav-items">product ID : http://Beyond-Binary.localhost/</li>
       </ul>
     </div>
 ```
