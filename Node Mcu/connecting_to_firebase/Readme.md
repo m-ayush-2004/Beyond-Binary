@@ -7,7 +7,7 @@ Here's a detailed guide for getting started with Firebase Authentication, format
 ## Step 1: Access the Authentication Section
 Click on the three horizontal bars (☰) in the top left corner of the Firebase console to open the navigation menu.
 
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au1.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au1.png)
 
 ## Step 2: Navigate to Authentication
 Select **Build** from the menu, then click on **Authentication**. This will take you to the section where you can manage user authentication for your project.
@@ -15,12 +15,12 @@ Select **Build** from the menu, then click on **Authentication**. This will take
 ## Step 3: Get Started with Authentication
 Click on the **Get Started** button. This will enable Firebase Authentication for your project.
 
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au2.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au2.png)
 
 ## Step 4: Choose Sign-In Method
 In the Authentication section, click on the **Sign-in method** tab. Here, you will see various authentication providers you can enable.
 
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au3.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au3.png)
 
 
 ### Enable Email/Password Authentication
@@ -29,7 +29,7 @@ In the Authentication section, click on the **Sign-in method** tab. Here, you wi
 3. Click on **Save** to apply the changes.
 
 
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au3.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au3.png)
  
 ## Step 5: Create a User
 To create a new user for testing, you can do this directly from the Firebase console:
@@ -41,7 +41,7 @@ To create a new user for testing, you can do this directly from the Firebase con
    - **Password**: `test123`
 4. Click on **Add User** to save the new user.
 
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au4.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au4.png)
  
 ## Step 6: Obtain Your Firebase Configuration
 To integrate Firebase Authentication into your web application, you need to obtain your Firebase configuration details:
@@ -60,7 +60,7 @@ const firebaseConfig = {
     appId: "YOUR_APP_ID"
 };
 ```
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au4.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au4.png)
 
 ---
 # Code explanation and upload 
@@ -76,13 +76,13 @@ Here are the detailed steps to install the Firebase library for NodeMCU in the A
 3. Hover over **Include Library** and select **Manage Libraries...**
 
 
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au7.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au7.png)
  
 ## Step 2: Search for the Firebase Library
 1. In the Library Manager window, type **"Firebase ESP Client"** in the search bar.
 2. The search results should show the **"Firebase ESP Client Library for ESP8266 and ESP32"** by Mobizt.
 
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au7.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au7.png)
  
 
 ## Step 3: Install the Library
@@ -90,7 +90,7 @@ Here are the detailed steps to install the Firebase library for NodeMCU in the A
 2. Click on the **"Install"** button to install the library.
 
 
-![alt](https://github.com/m-ayush-2004/TechnoVit-24/blob/main/assets/au7.png)
+![alt](https://github.com/m-ayush-2004/Beyond-Binary/blob/main/assets/au7.png)
  
 
 ## Step 4: Install Dependencies
@@ -147,7 +147,7 @@ The code begins by including essential libraries:
 #define USER_PASSWORD "test123"
 
 // Define the Firebase Realtime Database URL
-#define DATABASE_URL "https://technovit-24-default-rtdb.firebaseio.com/"
+#define DATABASE_URL "https://Beyond-Binary-default-rtdb.firebaseio.com/"
 ```
 
 ### 2. **Configuration Constants**
