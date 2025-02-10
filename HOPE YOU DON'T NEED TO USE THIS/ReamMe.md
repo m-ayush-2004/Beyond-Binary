@@ -41,7 +41,6 @@ This guide provides step-by-step instructions to install the necessary drivers f
 6. Select the correct `.inf` file and follow the prompts to install.
 7. Once installed, note the assigned COM port for future use.
 
-![Step 2 Manual Installation Screenshot](ADD_IMAGE_HERE)
 
 ### Step 3: Verifying Installation
 1. Open **Device Manager**.
