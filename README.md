@@ -1,4 +1,4 @@
-# TechnoVit-24
+# Beyond-Binary
 ### Roadmap for IoT Event: **Qubit** 🚀
 
 ---
